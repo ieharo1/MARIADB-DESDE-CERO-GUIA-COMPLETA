@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MariaDB desde Cero - Guía Completa</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <span class="logo-icon">🦭</span>
+                    <span class="logo-text">MariaDB desde Cero</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#que-es">¿Qué es?</a></li>
+                    <li><a href="#arquitectura">Arquitectura</a></li>
+                    <li><a href="#temas">Temas</a></li>
+                    <li><a href="#ejemplos">Ejemplos</a></li>
+                </ul>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h1>MariaDB desde Cero</h1>
+            <p class="hero-subtitle">Guía completa para aprender MariaDB desde fundamentos hasta conceptos avanzados.</p>
+            <div class="hero-buttons">
+                <a href="#que-es" class="btn btn-primary">Comenzar</a>
+                <a href="#ejemplos" class="btn btn-secondary">Ver ejemplos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ¿Qué es MariaDB? -->
+    <section id="que-es" class="section">
+        <div class="container">
+            <h2>¿Qué es MariaDB?</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="card-icon">🗄️</div>
+                    <h3>Sistema de Gestión de Bases de Datos</h3>
+                    <p>MariaDB es un sistema de gestión de bases de datos relacional de código abierto, creado como fork de MySQL por su creador original Michael Widenius.</p>
+                </div>
+                <div class="content-card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Para Qué Sirve</h3>
+                    <p>Se utiliza para aplicaciones web, sistemas empresariales, data warehousing y como alternativa completamente abierta a MySQL.</p>
+                </div>
+                <div class="content-card">
+                    <div class="card-icon">🔧</div>
+                    <h3>Características Principales</h3>
+                    <p>Compatible con MySQL, motores de almacenamiento múltiples, thread pooling, consultas más rápidas y características avanzadas de replicación.</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>💡 ¿Sabías qué?</h4>
+                <p>MariaDB recibe el nombre de la hija menor de Michael Widenius. Fue creado en 2009 como respuesta a la adquisición de MySQL por Oracle, garantizando que permanezca como software libre.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Arquitectura -->
+    <section id="arquitectura" class="section section-alt">
+        <div class="container">
+            <h2>Arquitectura de MariaDB</h2>
+            <p class="section-intro">MariaDB utiliza una arquitectura cliente-servidor similar a MySQL con mejoras en rendimiento y características adicionales.</p>
+
+            <div class="architecture-diagram">
+                <div class="arch-layer">
+                    <h4>Cliente / Aplicación</h4>
+                    <p>MySQL Client, HeidiSQL, aplicaciones web</p>
+                </div>
+                <div class="arch-arrow">⬇️</div>
+                <div class="arch-layer">
+                    <h4>MariaDB Server</h4>
+                    <p>Query Parser, Optimizer mejorado</p>
+                </div>
+                <div class="arch-arrow">⬇️</div>
+                <div class="arch-layer">
+                    <h4>Storage Engines</h4>
+                    <p>InnoDB, Aria, ColumnStore, Spider</p>
+                </div>
+                <div class="arch-arrow">⬇️</div>
+                <div class="arch-layer">
+                    <h4>Datos Físicos</h4>
+                    <p>Archivos, logs, cachés</p>
+                </div>
+            </div>
+
+            <div class="components-grid">
+                <div class="component-card">
+                    <h4>📊 Storage Engines</h4>
+                    <ul>
+                        <li>InnoDB - Transaccional, ACID compliant</li>
+                        <li>Aria - Motor por defecto para tablas temporales</li>
+                        <li>ColumnStore - Para data warehousing</li>
+                        <li>Spider - Para sharding distribuido</li>
+                    </ul>
+                </div>
+                <div class="component-card">
+                    <h4>💾 Mejoras de Rendimiento</h4>
+                    <ul>
+                        <li>Thread Pool - Manejo eficiente de conexiones</li>
+                        <li>Query Cache mejorado - Caché de consultas</li>
+                        <li>Subconsultas optimizadas - Mejor ejecución</li>
+                        <li>Índices hash en InnoDB - Búsquedas rápidas</li>
+                    </ul>
+                </div>
+                <div class="component-card">
+                    <h4>🔒 Características Avanzadas</h4>
+                    <ul>
+                        <li>Replicación multi-master - Alta disponibilidad</li>
+                        <li>Galera Cluster - Replicación síncrona</li>
+                        <li>Temporal Tables - Datos históricos</li>
+                        <li>System Versioning - Control de versiones</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temas -->
+    <section id="temas" class="section">
+        <div class="container">
+            <h2>Contenido del Curso</h2>
+            <div class="topics-grid">
+                <div class="topic-card" data-topic="1">
+                    <div class="topic-number">01</div>
+                    <h3>Introducción</h3>
+                    <p>Historia de MariaDB, diferencias con MySQL y ecosistema.</p>
+                    <a href="#" class="topic-link">Ver tema →</a>
+                </div>
+                <div class="topic-card" data-topic="2">
+                    <div class="topic-number">02</div>
+                    <h3>Instalación</h3>
+                    <p>Instalación en Linux, Windows y configuración del servidor.</p>
+                    <a href="#" class="topic-link">Ver tema →</a>
+                </div>
+                <div class="topic-card" data-topic="3">
+                    <div class="topic-number">03</div>
+                    <h3>Conceptos básicos</h3>
+                    <p>Bases de datos, tablas, tipos de datos y operaciones CRUD.</p>
+                    <a href="#" class="topic-link">Ver tema →</a>
+                </div>
+                <div class="topic-card" data-topic="4">
+                    <div class="topic-number">04</div>
+                    <h3>Ejemplos prácticos</h3>
+                    <p>Consultas avanzadas, JOINs, vistas y stored procedures.</p>
+                    <a href="#" class="topic-link">Ver tema →</a>
+                </div>
+                <div class="topic-card" data-topic="5">
+                    <div class="topic-number">05</div>
+                    <h3>Buenas prácticas</h3>
+                    <p>Optimización, indexing, EXPLAIN y tuning de consultas.</p>
+                    <a href="#" class="topic-link">Ver tema →</a>
+                </div>
+                <div class="topic-card" data-topic="6">
+                    <div class="topic-number">06</div>
+                    <h3>Casos reales</h3>
+                    <p>Implementaciones empresariales, clustering y replicación.</p>
+                    <a href="#" class="topic-link">Ver tema →</a>
+                </div>
+                <div class="topic-card" data-topic="7">
+                    <div class="topic-number">07</div>
+                    <h3>Proyecto final</h3>
+                    <p>Implementación completa de base de datos empresarial.</p>
+                    <a href="#" class="topic-link">Ver tema →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ejemplos -->
+    <section id="ejemplos" class="section section-alt">
+        <div class="container">
+            <h2>Ejemplos de Código</h2>
+            <div class="examples-container">
+                <div class="example-card">
+                    <h4>Crear Base de Datos</h4>
+                    <pre><code class="language-sql">CREATE DATABASE IF NOT EXISTS empresa;
+USE empresa;</code></pre>
+                </div>
+                <div class="example-card">
+                    <h4>Crear Tabla</h4>
+                    <pre><code class="language-sql">CREATE TABLE empleados (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(255) UNIQUE,
+    salario DECIMAL(10,2),
+    fecha_ingreso DATE,
+    INDEX idx_nombre (nombre)
+) ENGINE=InnoDB;</code></pre>
+                </div>
+                <div class="example-card">
+                    <h4>Consulta con JOIN</h4>
+                    <pre><code class="language-sql">SELECT e.nombre, d.nombre AS departamento
+FROM empleados e
+INNER JOIN departamentos d ON e.depto_id = d.id
+WHERE e.salario > 50000
+ORDER BY e.salario DESC;</code></pre>
+                </div>
+                <div class="example-card">
+                    <h4>Temporal Table</h4>
+                    <pre><code class="language-sql">CREATE TABLE productos (
+    id INT PRIMARY KEY,
+    nombre VARCHAR(100),
+    precio DECIMAL(10,2),
+    SYSTEM VERSIONING
+);</code></pre>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="#" class="btn btn-primary">Ver más ejemplos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>MariaDB desde Cero</h4>
+                    <p>Guía educativa completa para aprender MariaDB desde los fundamentos hasta conceptos avanzados.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#que-es">¿Qué es?</a></li>
+                        <li><a href="#temas">Temas</a></li>
+                        <li><a href="#ejemplos">Ejemplos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="https://mariadb.com/docs/" target="_blank">Docs Oficiales</a></li>
+                        <li><a href="https://mariadb.org/" target="_blank">Sitio Oficial</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>👨‍💻 Desarrollado por <strong>Isaac Esteban Haro Torres</strong></p>
+                <p class="developer-info">Ingeniero en Sistemas · Full Stack · Automatización · Data</p>
+                <div class="developer-contact">
+                    <p>📧 Email: <a href="mailto:zackharo1@gmail.com">zackharo1@gmail.com</a></p>
+                    <p>💻 GitHub: <a href="https://github.com/ieharo1" target="_blank">github.com/ieharo1</a></p>
+                </div>
+                <p class="copyright">© 2026 Isaac Esteban Haro Torres - Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
