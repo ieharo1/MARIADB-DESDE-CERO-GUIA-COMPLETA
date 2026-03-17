@@ -142,43 +142,209 @@
                     <div class="topic-number">01</div>
                     <h3>Introducción</h3>
                     <p>Historia de MariaDB, diferencias con MySQL y ecosistema.</p>
-                    <a href="#" class="topic-link">Ver tema →</a>
+                    <a href="#tema1-1" class="topic-link">Ver tema →</a>
                 </div>
                 <div class="topic-card" data-topic="2">
                     <div class="topic-number">02</div>
                     <h3>Instalación</h3>
                     <p>Instalación en Linux, Windows y configuración del servidor.</p>
-                    <a href="#" class="topic-link">Ver tema →</a>
+                    <a href="#tema1-2" class="topic-link">Ver tema →</a>
                 </div>
                 <div class="topic-card" data-topic="3">
                     <div class="topic-number">03</div>
                     <h3>Conceptos básicos</h3>
                     <p>Bases de datos, tablas, tipos de datos y operaciones CRUD.</p>
-                    <a href="#" class="topic-link">Ver tema →</a>
+                    <a href="#tema1-3" class="topic-link">Ver tema →</a>
                 </div>
                 <div class="topic-card" data-topic="4">
                     <div class="topic-number">04</div>
                     <h3>Ejemplos prácticos</h3>
                     <p>Consultas avanzadas, JOINs, vistas y stored procedures.</p>
-                    <a href="#" class="topic-link">Ver tema →</a>
+                    <a href="#tema2-1" class="topic-link">Ver tema →</a>
                 </div>
                 <div class="topic-card" data-topic="5">
                     <div class="topic-number">05</div>
                     <h3>Buenas prácticas</h3>
                     <p>Optimización, indexing, EXPLAIN y tuning de consultas.</p>
-                    <a href="#" class="topic-link">Ver tema →</a>
+                    <a href="#tema2-2" class="topic-link">Ver tema →</a>
                 </div>
                 <div class="topic-card" data-topic="6">
                     <div class="topic-number">06</div>
                     <h3>Casos reales</h3>
                     <p>Implementaciones empresariales, clustering y replicación.</p>
-                    <a href="#" class="topic-link">Ver tema →</a>
+                    <a href="#tema3-1" class="topic-link">Ver tema →</a>
                 </div>
                 <div class="topic-card" data-topic="7">
                     <div class="topic-number">07</div>
                     <h3>Proyecto final</h3>
                     <p>Implementación completa de base de datos empresarial.</p>
-                    <a href="#" class="topic-link">Ver tema →</a>
+                    <a href="#tema3-2" class="topic-link">Ver tema →</a>
+                </div>
+            </div>
+
+            <!-- Contenido Detallado de Temas -->
+            <div class="topic-content-container">
+                <div class="content-detail" id="tema1-1">
+                    <h3>🦭 Introducción a MariaDB</h3>
+                    <div class="content-body">
+                        <p><strong>MariaDB</strong> es un sistema de gestión de bases de datos relacional de código abierto, creado como fork de MySQL por su creador original Michael Widenius.</p>
+                        <h4>Historia:</h4>
+                        <p>MariaDB recibe el nombre de la hija menor de Michael Widenius. Fue creado en 2009 como respuesta a la adquisición de MySQL por Oracle, garantizando que permanezca como software libre.</p>
+                        <h4>Diferencias con MySQL:</h4>
+                        <ul>
+                            <li><strong>Thread Pool:</strong> Manejo más eficiente de conexiones</li>
+                            <li><strong>Aria Engine:</strong> Motor para tablas temporales</li>
+                            <li><strong>System Versioning:</strong> Control de versiones nativo</li>
+                            <li><strong>Galera Cluster:</strong> Replicación síncrona multi-master</li>
+                        </ul>
+                        <div class="info-box">
+                            <strong>💡 ¿Sabías qué?</strong>
+                            <p>MariaDB es usado por empresas como Wikipedia, Google y DBS Bank para manejar grandes volúmenes de datos.</p>
+                        </div>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema1-2">
+                    <h3>🔧 Instalación de MariaDB</h3>
+                    <div class="content-body">
+                        <h4>En Linux (Ubuntu/Debian):</h4>
+                        <pre><code>sudo apt update
+sudo apt install mariadb-server
+sudo mysql_secure_installation</code></pre>
+                        <h4>En Windows:</h4>
+                        <ol>
+                            <li>Descarga desde mariadb.org</li>
+                            <li>Ejecuta el instalador</li>
+                            <li>Configura la contraseña de root</li>
+                        </ol>
+                        <h4>En macOS:</h4>
+                        <pre><code>brew install mariadb
+brew services start mariadb</code></pre>
+                        <h4>Verificar instalación:</h4>
+                        <pre><code>mariadb --version
+mariadb -u root -p</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema1-3">
+                    <h3>📦 Conceptos Básicos</h3>
+                    <div class="content-body">
+                        <h4>Crear Base de Datos:</h4>
+                        <pre><code>CREATE DATABASE IF NOT EXISTS empresa;
+USE empresa;</code></pre>
+                        <h4>Crear Tabla:</h4>
+                        <pre><code>CREATE TABLE empleados (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(255) UNIQUE,
+    salario DECIMAL(10,2),
+    fecha_ingreso DATE
+) ENGINE=InnoDB;</code></pre>
+                        <h4>Operaciones CRUD:</h4>
+                        <pre><code>-- INSERT
+INSERT INTO empleados (nombre, email) VALUES ('Juan', 'juan@email.com');
+
+-- SELECT
+SELECT * FROM empleados WHERE salario > 50000;
+
+-- UPDATE
+UPDATE empleados SET salario = 60000 WHERE id = 1;
+
+-- DELETE
+DELETE FROM empleados WHERE id = 1;</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema2-1">
+                    <h3>💻 Consultas Avanzadas</h3>
+                    <div class="content-body">
+                        <h4>JOINs:</h4>
+                        <pre><code>SELECT e.nombre, d.nombre AS departamento
+FROM empleados e
+INNER JOIN departamentos d ON e.depto_id = d.id;
+
+-- LEFT JOIN
+SELECT e.nombre, d.nombre AS departamento
+FROM empleados e
+LEFT JOIN departamentos d ON e.depto_id = d.id;</code></pre>
+                        <h4>Vistas:</h4>
+                        <pre><code>CREATE VIEW vista_empleados AS
+SELECT e.nombre, d.nombre AS departamento
+FROM empleados e
+JOIN departamentos d ON e.depto_id = d.id;</code></pre>
+                        <h4>Stored Procedures:</h4>
+                        <pre><code>DELIMITER //
+CREATE PROCEDURE ObtenerEmpleados()
+BEGIN
+    SELECT * FROM empleados;
+END //
+DELIMITER ;</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema2-2">
+                    <h3>✅ Buenas Prácticas</h3>
+                    <div class="content-body">
+                        <h4>Índices:</h4>
+                        <pre><code>-- Crear índice
+CREATE INDEX idx_nombre ON empleados(nombre);
+
+-- Índice compuesto
+CREATE INDEX idx_depto_salario ON empleados(depto_id, salario);</code></pre>
+                        <h4>EXPLAIN:</h4>
+                        <pre><code>EXPLAIN SELECT * FROM empleados WHERE nombre = 'Juan';</code></pre>
+                        <h4>Optimización:</h4>
+                        <ul>
+                            <li>Usa índices en columnas de WHERE y JOIN</li>
+                            <li>Evita SELECT *, selecciona solo columnas necesarias</li>
+                            <li>Usa LIMIT para paginar resultados</li>
+                        </ul>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema3-1">
+                    <h3>🚀 Casos Reales</h3>
+                    <div class="content-body">
+                        <h4>Galera Cluster:</h4>
+                        <p>Replicación síncrona multi-master para alta disponibilidad.</p>
+                        <h4>System Versioning:</h4>
+                        <pre><code>CREATE TABLE productos (
+    id INT PRIMARY KEY,
+    precio DECIMAL(10,2),
+    SYSTEM VERSIONING
+);
+
+-- Consultar datos históricos
+SELECT * FROM productos FOR SYSTEM_TIME ALL;</code></pre>
+                        <h4>Backup:</h4>
+                        <pre><code>mysqldump -u root -p empresa > backup.sql</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema3-2">
+                    <h3>📋 Proyecto Final</h3>
+                    <div class="content-body">
+                        <p>Implementa una base de datos empresarial completa:</p>
+                        <ol>
+                            <li>Diseñar modelo entidad-relación</li>
+                            <li>Crear tablas con normalización</li>
+                            <li>Implementar vistas y stored procedures</li>
+                            <li>Configurar índices estratégicos</li>
+                            <li>Implementar backup automático</li>
+                            <li>Configurar replicación</li>
+                        </ol>
+                        <div class="info-box">
+                            <strong>💡 Proyecto sugerido:</strong>
+                            <p>Crea una base de datos para sistema de gestión empresarial con módulos de RRHH, ventas e inventario.</p>
+                        </div>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
                 </div>
             </div>
         </div>
