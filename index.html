@@ -134,63 +134,57 @@
     </section>
 
     <!-- Temas -->
-    <section id="temas" class="section">
+    <section id="temas" class="topics">
         <div class="container">
-            <h2>Contenido del Curso</h2>
+            <h2>📖 Temas del Curso</h2>
+            <p class="topics-intro">Haz clic en cualquier tema para ver el contenido detallado</p>
+            
             <div class="topics-grid">
-                <div class="topic-card" data-topic="1">
-                    <div class="topic-number">01</div>
-                    <div class="topic-icon">📌</div>
-                    <h3>Introducción</h3>
-                    <p>Historia de MariaDB, diferencias con MySQL y ecosistema.</p>
-                    <a href="#tema1-1" class="topic-link">Ver tema →</a>
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <span class="topic-icon">🦭</span>
+                        <h3>Módulo 1: Fundamentos</h3>
+                    </div>
+                    <ul class="topic-list">
+                        <li><a href="#tema1-1">Introducción a MariaDB</a></li>
+                        <li><a href="#tema1-2">Instalación</a></li>
+                        <li><a href="#tema1-3">Conceptos básicos</a></li>
+                        <li><a href="#tema1-4">Bases de Datos y Tablas</a></li>
+                    </ul>
+                    <a href="#tema1-1" class="btn-topic">Ver tema →</a>
                 </div>
-                <div class="topic-card" data-topic="2">
-                    <div class="topic-number">02</div>
-                    <div class="topic-icon">⚙️</div>
-                    <h3>Instalación</h3>
-                    <p>Instalación en Linux, Windows y configuración del servidor.</p>
-                    <a href="#tema1-2" class="topic-link">Ver tema →</a>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <span class="topic-icon">⚙️</span>
+                        <h3>Módulo 2: Intermedio</h3>
+                    </div>
+                    <ul class="topic-list">
+                        <li><a href="#tema2-1">Ejemplos prácticos</a></li>
+                        <li><a href="#tema2-2">Buenas prácticas</a></li>
+                        <li><a href="#tema2-3">Consultas Avanzadas</a></li>
+                        <li><a href="#tema2-4">Procedimientos Almacenados</a></li>
+                    </ul>
+                    <a href="#tema2-1" class="btn-topic">Ver tema →</a>
                 </div>
-                <div class="topic-card" data-topic="3">
-                    <div class="topic-number">03</div>
-                    <div class="topic-icon">📦</div>
-                    <h3>Conceptos básicos</h3>
-                    <p>Bases de datos, tablas, tipos de datos y operaciones CRUD.</p>
-                    <a href="#tema1-3" class="topic-link">Ver tema →</a>
-                </div>
-                <div class="topic-card" data-topic="4">
-                    <div class="topic-number">04</div>
-                    <div class="topic-icon">💻</div>
-                    <h3>Ejemplos prácticos</h3>
-                    <p>Consultas avanzadas, JOINs, vistas y stored procedures.</p>
-                    <a href="#tema2-1" class="topic-link">Ver tema →</a>
-                </div>
-                <div class="topic-card" data-topic="5">
-                    <div class="topic-number">05</div>
-                    <div class="topic-icon">✅</div>
-                    <h3>Buenas prácticas</h3>
-                    <p>Optimización, indexing, EXPLAIN y tuning de consultas.</p>
-                    <a href="#tema2-2" class="topic-link">Ver tema →</a>
-                </div>
-                <div class="topic-card" data-topic="6">
-                    <div class="topic-number">06</div>
-                    <div class="topic-icon">🚀</div>
-                    <h3>Casos reales</h3>
-                    <p>Implementaciones empresariales, clustering y replicación.</p>
-                    <a href="#tema3-1" class="topic-link">Ver tema →</a>
-                </div>
-                <div class="topic-card" data-topic="7">
-                    <div class="topic-number">07</div>
-                    <div class="topic-icon">📋</div>
-                    <h3>Proyecto final</h3>
-                    <p>Implementación completa de base de datos empresarial.</p>
-                    <a href="#tema3-2" class="topic-link">Ver tema →</a>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <span class="topic-icon">🚀</span>
+                        <h3>Módulo 3: Avanzado</h3>
+                    </div>
+                    <ul class="topic-list">
+                        <li><a href="#tema3-1">Casos reales</a></li>
+                        <li><a href="#tema3-2">Proyecto final</a></li>
+                        <li><a href="#tema3-3">Optimización y Tuning</a></li>
+                        <li><a href="#tema3-4">Replicación y Clustering</a></li>
+                    </ul>
+                    <a href="#tema3-1" class="btn-topic">Ver tema →</a>
                 </div>
             </div>
 
             <!-- Contenido Detallado de Temas -->
-            <div class="topic-content-container">
+            <div class="topic-content">
                 <div class="content-detail" id="tema1-1">
                     <h3>🦭 Introducción a MariaDB</h3>
                     <div class="content-body">
@@ -353,6 +347,194 @@ SELECT * FROM productos FOR SYSTEM_TIME ALL;</code></pre>
                     </div>
                     <a href="#temas" class="btn btn-back">← Volver a temas</a>
                 </div>
+                <div class="content-detail" id="tema1-4">
+                    <h3>💾 Backup, Restore y Migración</h3>
+                    <div class="content-body">
+                        <h4>Backup con mysqldump:</h4>
+                        <pre><code># Backup de una base de datos
+mysqldump -u root -p empresa > backup_empresa.sql
+
+# Backup de todas las bases
+mysqldump -u root -p --all-databases > full_backup.sql
+
+# Backup con compresión
+mysqldump -u root -p empresa | gzip > backup.sql.gz</code></pre>
+                        <h4>Restore:</h4>
+                        <pre><code># Restaurar base de datos
+mysql -u root -p empresa < backup_empresa.sql
+
+# Restaurar con gzip
+gunzip < backup.sql.gz | mysql -u root -p empresa</code></pre>
+                        <h4>MariaDB Backup (XtraBackup):</h4>
+                        <pre><code># Backup físico (más rápido para grandes BD)
+mariabackup --backup --target-dir /backup/full
+
+# Restaurar
+mariabackup --prepare --target-dir /backup/full
+mariabackup --copy-back --target-dir /backup/full</code></pre>
+                        <h4>Migración a MariaDB:</h4>
+                        <pre><code># Desde MySQL
+mysqldump --all-databases > mysql_backup.sql
+mysql -u root -p < mysql_backup.sql</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema2-3">
+                    <h3>🔐 Transacciones y Control de Concurrencia</h3>
+                    <div class="content-body">
+                        <h4>Transacciones:</h4>
+                        <pre><code>START TRANSACTION;
+
+UPDATE cuentas SET saldo = saldo - 100 WHERE id = 1;
+UPDATE cuentas SET saldo = saldo + 100 WHERE id = 2;
+
+-- Verificar que todo esté bien
+SELECT * FROM cuentas WHERE id IN (1, 2);
+
+-- Confirmar o revertir
+COMMIT;
+-- o
+ROLLBACK;</code></pre>
+                        <h4>Niveles de Aislamiento:</h4>
+                        <pre><code>-- Ver nivel actual
+SELECT @@tx_isolation;
+
+-- Establecer nivel
+SET SESSION TRANSACTION ISOLATION LEVEL SERIALIZABLE;</code></pre>
+                        <h4>Locking:</h4>
+                        <pre><code>-- Bloquear fila
+SELECT * FROM productos WHERE id = 1 FOR UPDATE;
+
+-- Bloqueo compartido
+SELECT * FROM productos WHERE id = 1 LOCK IN SHARE MODE;</code></pre>
+                        <h4>SAVEPOINT:</h4>
+                        <pre><code>SAVEPOINT sp1;
+INSERT INTO log VALUES ('evento');
+ROLLBACK TO SAVEPOINT sp1;</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema2-4">
+                    <h3>📊 Subconsultas y UNION</h3>
+                    <div class="content-body">
+                        <h4>Subconsultas:</h4>
+                        <pre><code>-- Subconsulta en WHERE
+SELECT nombre FROM empleados 
+WHERE salario > (SELECT AVG(salario) FROM empleados);
+
+-- Subconsulta en FROM
+SELECT dept, promedio FROM (
+    SELECT departamento_id AS dept, AVG(salario) AS promedio
+    FROM empleados GROUP BY departamento_id
+) AS stats;</code></pre>
+                        <h4>Subconsultas con IN/EXISTS:</h4>
+                        <pre><code>-- Con IN
+SELECT * FROM productos 
+WHERE categoria_id IN (
+    SELECT id FROM categorias WHERE nombre LIKE '%electronics%'
+);
+
+-- Con EXISTS
+SELECT * FROM clientes c
+WHERE EXISTS (
+    SELECT 1 FROM pedidos p WHERE p.cliente_id = c.id
+);</code></pre>
+                        <h4>UNION y UNION ALL:</h4>
+                        <pre><code>-- UNION (elimina duplicados)
+SELECT nombre FROM empleados_2023
+UNION
+SELECT nombre FROM empleados_2024;
+
+-- UNION ALL (mantiene duplicados)
+SELECT nombre FROM empleados_2023
+UNION ALL
+SELECT nombre FROM empleados_2024;</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema3-3">
+                    <h3>🧩 Procedimientos y Funciones Avanzados</h3>
+                    <div class="content-body">
+                        <h4>Stored Procedure con Transacción:</h4>
+                        <pre><code>DELIMITER //
+CREATE PROCEDURE Transferencia(
+    IN cuenta_origen INT,
+    IN cuenta_destino INT,
+    IN monto DECIMAL(10,2)
+)
+BEGIN
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        ROLLBACK;
+        SELECT 'Error en la transacción' AS resultado;
+    END;
+    
+    START TRANSACTION;
+    
+    UPDATE cuentas SET saldo = saldo - monto WHERE id = cuenta_origen;
+    UPDATE cuentas SET saldo = saldo + monto WHERE id = cuenta_destino;
+    
+    COMMIT;
+    SELECT 'Transferencia exitosa' AS resultado;
+END //
+DELIMITER ;</code></pre>
+                        <h4>Funciones:</h4>
+                        <pre><code>DELIMITER //
+CREATE FUNCTION calcular_iva(precio DECIMAL(10,2))
+RETURNS DECIMAL(10,2)
+DETERMINISTIC
+BEGIN
+    RETURN precio * 0.12;
+END //
+DELIMITER ;
+
+-- Uso
+SELECT nombre, precio, calcular_iva(precio) AS iva FROM productos;</code></pre>
+                        <h4>Triggers:</h4>
+                        <pre><code>CREATE TRIGGER before_empleado_update
+BEFORE UPDATE ON empleados
+FOR EACH ROW
+BEGIN
+    INSERT INTO audit_log (tabla, accion, usuario, fecha)
+    VALUES ('empleados', 'UPDATE', CURRENT_USER(), NOW());
+END;</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
+
+                <div class="content-detail" id="tema3-4">
+                    <h3>🌐 Replicación y Alta Disponibilidad</h3>
+                    <div class="content-body">
+                        <h4>Galera Cluster:</h4>
+                        <pre><code>-- Configuración en /etc/mysql/mariadb.conf.d/galera.cnf
+[galera]
+wsrep_on=ON
+wsrep_provider=/usr/lib/galera/libgalera_smm.so
+wsrep_cluster_address="gcomm://node1,node2,node3"
+binlog_format=row
+default_storage_engine=InnoDB</code></pre>
+                        <h4>Estado del Cluster:</h4>
+                        <pre><code>SHOW STATUS LIKE 'wsrep%';
+SHOW VARIABLES LIKE 'wsrep_%';</code></pre>
+                        <h4>Replicación Maestro-Esclavo:</h4>
+                        <pre><code>-- En el maestro
+GRANT REPLICATION SLAVE ON *.* TO 'replica'@'%';
+SHOW MASTER STATUS;
+
+-- En el esclavo
+CHANGE MASTER TO 
+    MASTER_HOST='192.168.1.100',
+    MASTER_USER='replica',
+    MASTER_PASSWORD='password',
+    MASTER_LOG_FILE='mysql-bin.000001',
+    MASTER_LOG_POS=123;
+START SLAVE;</code></pre>
+                    </div>
+                    <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                </div>
             </div>
         </div>
     </section>
@@ -402,40 +584,23 @@ ORDER BY e.salario DESC;</code></pre>
         </div>
     </section>
 
-    <!-- Footer -->
+        <section id="contacto" class="contact">
+            <div class="container">
+                <h2>👨‍💻 Desarrollado por Isaac Esteban Haro Torres</h2>
+                <p class="contact-title">Ingeniero en Sistemas · Full Stack · Automatización · Data</p>
+                <div class="contact-info">
+                    <p>📧 Email: <a href="mailto:zackharo1@gmail.com">zackharo1@gmail.com</a></p>
+                    <p>📱 WhatsApp: 098805517</p>
+                    <p>💻 GitHub: <a href="https://github.com/ieharo1" target="_blank">github.com/ieharo1</a></p>
+                    <p>🌐 Portafolio: <a href="https://ieharo1.github.io/portafolio-isaac.haro/" target="_blank">ieharo1.github.io/portafolio-isaac.haro/</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>MariaDB desde Cero</h4>
-                    <p>Guía educativa completa para aprender MariaDB desde los fundamentos hasta conceptos avanzados.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#que-es">¿Qué es?</a></li>
-                        <li><a href="#temas">Temas</a></li>
-                        <li><a href="#ejemplos">Ejemplos</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Recursos</h4>
-                    <ul>
-                        <li><a href="https://mariadb.com/docs/" target="_blank">Docs Oficiales</a></li>
-                        <li><a href="https://mariadb.org/" target="_blank">Sitio Oficial</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>👨‍💻 Desarrollado por <strong>Isaac Esteban Haro Torres</strong></p>
-                <p class="developer-info">Ingeniero en Sistemas · Full Stack · Automatización · Data</p>
-                <div class="developer-contact">
-                    <p>📧 Email: <a href="mailto:zackharo1@gmail.com">zackharo1@gmail.com</a></p>
-                    <p>💻 GitHub: <a href="https://github.com/ieharo1" target="_blank">github.com/ieharo1</a></p>
-                </div>
-                <p class="copyright">© 2026 Isaac Esteban Haro Torres - Todos los derechos reservados.</p>
-            </div>
+            <p>&copy; 2026 Isaac Esteban Haro Torres - Todos los derechos reservados.</p>
         </div>
     </footer>
 
